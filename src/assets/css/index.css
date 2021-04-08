@@ -1,0 +1,400 @@
+@font-face{
+    font-family: content-text;
+    src: url('../fonts/NunitoSans-Bold.ttf');
+  }
+  @font-face{
+    font-family: notosansfont;
+    src: url('../fonts/NotoSans-Regular.ttf');
+  }
+  @font-face{
+    font-family: opensansfont;
+    src: url('../fonts/OpenSans-Regular.ttf');
+  }
+  @font-face{
+    font-family: latofont;
+    src: url('../fonts/Lato-Bold.ttf');
+  }
+  @font-face{
+    font-family: robotofont;
+    src: url('../fonts/Roboto-Light.ttf');
+  }
+
+  body{
+    margin: 0;
+  }
+  .container{
+    margin: auto;
+    width: 97%;
+  }
+  .container .topnav-container{
+    border-bottom: 1px solid lightgray;
+    margin: auto;
+  }
+  .container .topnav-container .section {
+    display: inline-block;
+  }
+  .container .topnav-container .section.logo-section {
+    width: 15%;
+  }
+  .container .section.logo-section .logo a{
+    display: flex;
+  }
+  .container .section.logo-section .logo{
+    position: relative;
+    top: 12px;
+  }
+  .container .section.logo-section .logo img{
+    width: 95%;
+    margin: 0% 0% 0% 0%;
+  }
+  .container .topnav-container .section.topnav-employee-directory {
+    width: 54%;
+  }
+  .container .topnav-container .section.topnav-profile {
+    width: 30.5%;
+    font-size: 20px;
+    text-align: right;
+  }
+  .container .topnav-container .section.topnav-employee-directory h1{
+    font-family: robotofont;
+    color:#3ec0fd; 
+    font-size: 37px;
+    margin: 0;
+  }
+  .container .topnav-container .section.topnav-employee-directory h4{
+    font-family: robotofont;
+    color:rgba(0, 0, 0, 0.7); 
+    font-size: 19px;
+    margin: 0;
+  }
+  .container .topnav-container .section.topnav-profile h2{
+    font-family: robotofont;
+    color:#3ec0fd; 
+  }
+  .container .employees-container{
+    margin-top: 1%;
+  }
+  .container .employees-container .section {
+    display: inline-block;
+  }
+  
+  .container .employees-container .section.filter-section {
+    width: 20%;
+    vertical-align: top;
+    margin-top: 0.5%;
+  }
+  
+  .container .employees-container .section.employee-display-section {
+    width: 79.7%;
+    color: white;
+    background-color: white;
+  }
+  .container .employees-container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar{
+    display: inline-block;
+    margin-top: -1%;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section {
+    width: 33%;
+    text-align: left;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.filter-employee-section {
+    width: 33%;
+    text-align: center;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.add-employee-button {
+    width: 33.3%;
+    text-align: right;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section p{
+    font-family: notosansfont;
+    color: rgba(0, 0, 0, 0.616);
+    display: inline-block;
+    letter-spacing: -1px;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section input{
+    width: 86.9%;
+    -webkit-appearance:textfield;
+    box-sizing: content-box;
+    border: none;
+    outline: none;
+    font-size: 11px;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section .search-box{
+    display: inline-block;
+    width: 51%;
+  background-color: white;
+  border: 1px solid #c4c1c1;
+  border-radius: 0px;
+	align-items: center;
+  padding: 8px 6px;
+  margin-left: 2%;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section .search-box > i {
+    color: #c4c1c1;
+  }
+  .container .employees-container .section.employee-display-section .search-button button{
+    background: rgb(0, 177, 252);
+    font-size: 22px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 45.1px;
+    height: 38px;
+    margin: 1.5px 1.5px;
+    outline: none;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.search-employee-section button{
+
+    display: inline-block;
+    padding: 10px 0px;
+    width: 20%;
+    margin-left: 8%;
+    background-color: #69ba00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  .container .employees-container .section.employee-display-section .user-access-bar.filter-employee-section p{
+    font-family: notosansfont;
+    color: rgba(0, 0, 0, 0.616);
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: -1px;
+  }
+  
+  .container .employees-container .section.employee-display-section .user-access-bar.add-employee-button button{
+
+    display: inline-block;
+    height:33px;
+    width: 30%;
+    margin-left: 8%;
+    background-color: #00b1fc;
+    color: white;
+    border: none;
+    font-family: latofont;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .form-popup {
+    display: none;
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    background: white;
+  }
+  
+  .form-popup .form-container {
+    max-width: 250px;
+    padding: 10px;
+    color: black;
+    font-family: robotofont;
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  
+  .form-popup .form-container input[type=text], .form-container input[type=number], .form-container input[type=email] {
+    width: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 0 0px 0;
+    border: none;
+    font-size: 13px;
+    background: rgb(248,248,248);
+  }
+  
+  .form-popup .form-container input[type=text]:focus, .form-container input[type=number]:focus, .form-container input[type=email]:focus {
+    outline: none;
+  }
+  .container .employees-container .section.employee-display-section .employee-section{
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    border: 1px solid lightgrey;
+    color: black;
+  }
+.employee-cards{
+    margin: 2%;
+  }
+  .container .employees-container .section.employee-display-section .employee-section .employee-card {
+    padding: 10px 10px;
+    max-width: 22.2%;
+    background-color: hsl(0, 2%, 91%);
+    margin: 1% 0.5%;
+    display: none;
+ }
+ .container .employees-container .section.employee-display-section .employee-section .employee-card img.container-image {
+    display: inline-block;
+    vertical-align: top;
+    width: 28%;
+    height: 64px;
+ }
+ .container .employees-container .section.employee-display-section .employee-section .employee-card .container-text {
+    display: inline-block;
+    width: 65%;
+    margin-left: 2%;
+ }
+ .container .employees-container .section.employee-display-section .employee-section .employee-card .container-text h4{
+  font-family: notosansfont;
+  color: rgba(0, 0, 0, 0.7);
+   margin: 0;
+   font-size: 13px;
+   letter-spacing: 0px;
+ }
+ .container .employees-container .section.employee-display-section .employee-section .employee-card .container-text p{
+  font-family: robotofont;
+  font-size: 11px;
+   color: gray;
+   margin: 0;
+ }
+ .container .employees-container .section.employee-display-section .employee-section .employee-card .container-text .employee-job-title{
+   margin-top: 3%;
+ }
+ .container .employees-container .section.filter-section .office, .container .employees-container .section.filter-section .job-title{
+   margin-top: 20%;
+ }
+ .container .employees-container .section.filter-section button{
+   display: inline-block;
+   background: white;
+   border: none;
+   font-size: 14px;
+   cursor: pointer;
+   font-family: notosansfont;
+   color: rgba(0, 0, 0, 0.6);
+   padding: 0;
+   outline: none;
+ }
+ .container .employees-container .section.filter-section p{
+   display: inline-block;
+   font-family: notosansfont;
+   font-size:13px;
+   color: rgba(0, 0, 0, 0.6);
+ }
+ .container .employees-container .section.filter-section h3{
+   margin-left: 0%;
+   font-family: content-text;
+   letter-spacing: -1px;
+   font-size: 17px;
+   font-weight: bolder;
+   color: #545353;
+ }
+ .container .employees-container .section.filter-section .department .department-list{
+   margin-top: -6%;
+ }
+ .container .employees-container .section.filter-section .office .office-list{
+  margin-top: -6%;
+}
+.container .employees-container .section.filter-section .job-title .job-title-list{
+  margin-top: -6%;
+}
+.formerror{
+  color: red;
+  font-size: 11px;
+}
+.form-button{
+
+  display: inline-block;
+  height:33px;
+  width: 30%;
+  background-color: #3ec0fd;
+  color: white;
+  border: none;
+  font-family: robotofont;
+  font-size: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  outline: none;
+}
+.text-right{
+  position: absolute;
+  right: 21px;
+}
+.cancel-button{
+  background-color: #3ec0fd;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 23px;
+  top: 28px;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 2px;
+}
+.container .employees-container .section.filter-section .view-more{
+  margin-top: 2%;
+  display: none;
+}
+.container .employees-container .section.filter-section .view-more button{
+    color: rgb(0, 177, 252);
+    font-weight: bolder;
+    padding: 0;
+    outline: none;
+    font-size: 11px;
+}
+.form-container h1{
+  display: inline-block;
+}
+.form-field{
+  margin:5% 0%;
+}
+.form-field.button-bottom{
+  margin-top: 45px;
+}
+.star{
+  color: red;
+}
+#selectType{
+  font-family: opensansfont;
+  font-weight: bolder;
+  font-size: 12px;
+  width: 38%;
+    border: 1px solid lightgrey;
+    border-radius: 0px;
+    padding: 8px 10px;
+    color: rgba(0, 0, 0, 0.514);
+    display: inline-block;
+    margin-left: 2%;
+    outline: none;
+}
+.fas.fa-phone-square-alt, .fas.fa-envelope, .fas.fa-comment, .fas.fa-star, .fas.fa-heart{
+  color: gray;
+  margin-right: 4%;
+  margin-top: 3%;
+  font-size: 10px;
+}
+#buttonsHolder{
+  margin-top: 1%;
+  display: inline-block;
+}
+.profile-name{
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: lighter;
+}
+.profile-pic{
+  width: 13%;
+  margin-left: 2%;
+  height: 58px;
+}
+.container .employees-container .section.employee-display-section .note{
+  color: rgba(0, 0, 0, 0.7);
+  font-family: notosansfont;
+  font-size: 12px;
+}
+.container .employees-container .section.employee-display-section .note .note-section{
+  color: black;
+}
+.employee-id{
+  display: none;
+}
