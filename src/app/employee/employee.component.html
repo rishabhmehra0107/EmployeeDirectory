@@ -1,0 +1,68 @@
+<app-filter [filterData]="filters" (filterEmployees)="filterEmployees($event)"></app-filter>
+<div class="section employee-display-section">
+    <div class="search-button">
+    <div id="buttonsHolder">
+    <p>
+        <button class="user-button"><i class="fas fa-user"></i></button>
+        <button class="alphabetClass" (click)="searchByletter(letter.value)" *ngFor="let letter of letters">{{letter.value}}</button>
+    </p>
+    </div>
+    </div>
+    <div>
+    <div class="user-access-bar search-employee-section">
+        <p><b>Search</b></p>
+        <div class="search-box">
+
+            <i class="fa fa-search" aria-hidden="true"></i>
+        
+            <input type="search" (keyup)="searchEmployee($event)" placeholder="Enter any keyword" name="searchEntry">
+        
+        </div>
+        <button type="button" (click)="clearData()">Clear</button>
+    </div>
+    <div class="user-access-bar filter-employee-section">
+        <p>Filter by</p>
+        <select name="filterEmployee" id="selectType" (change)="selectFilter($event)">
+            <option value="Preferred Name">Preferred Name</option>
+            <option value="First Name">First Name</option>
+            <option value="Last Name">Last Name</option>
+            <option value="Department">Department</option>
+            <option value="Office">Office</option>
+            <option value="Job Title">Job Title</option>
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
+            <option value="Skype ID">Skype ID</option>
+          </select>
+    </div>
+    <div class="user-access-bar add-employee-button">
+        <button type="button" (click)="openEForm()">Add Employee</button>
+    </div>
+</div>
+<div class="note">
+    <p><b class="note-section">Note:</b> Please use the advanced filter options to refine your results.</p>
+</div>
+    <div class="employee-section">
+        <p id="noEmployeeAdded" *ngIf="noEmployeePresent()">No employees are added yet.</p>
+        <div class="employee-cards" id="employeeList" *ngFor="let employee of filteredEmployees">
+                <div class="employee-card" (click)="openEmployeeCard(employee.phone)" *ngIf="employeeCardShow">
+                    <img class='container-image' src='https://cdn.wisden.com/wp-content/uploads/2017/11/GettyImages-689405274-e1520010556769.jpg'>
+                    <div class='container-text'>
+                        <h4 class='name'>{{employee.firstName}}&nbsp;{{employee.lastName}}</h4>
+                        <p class='employee-job-title'>{{employee.jobTitle}}</p>
+                        <p class='employee-department'>{{employee.department}}</p>
+                        <i class='fas fa-phone-square-alt'></i>
+                        <i class='fas fa-envelope'></i>
+                        <i class='fas fa-comment'></i>
+                        <i class='fas fa-star'></i>
+                        <i class='fas fa-heart'></i>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+
+  <div class="edit-popup form-popup" *ngIf="formShow">
+    <div class="form-container">
+    <app-employeeform (formSubmit)="formSubmit($event)" (closeForm)="closeForm($event)" [employee]="activeEmployeeData"></app-employeeform>
+</div>
+</div>
