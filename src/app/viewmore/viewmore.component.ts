@@ -9,10 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ViewmoreComponent {
   @Input() public filterData;
   isCollapsed = true;
+  
   show(){
     if(this.filterData.departments.length>2){
       return true;
     }
+    
     return false;
   }
 }
