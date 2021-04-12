@@ -1,0 +1,29 @@
+<div class="section filter-section col-md-3">
+    <div class="department col-12" id="departmentContainer">
+        <div class="row">
+        <h3 class="col"><b>Departments</b></h3>
+        <p id="noEmployeeAdded" *ngIf="noFilter()">No filters are added yet.</p>
+        <app-viewmore [filterData]="filterData">
+            <button  class="col" (click)="sendFilterValue(dpt.value)" *ngFor="let dpt of filterData.departments">
+                <ng-container *ngIf="noFilter()"></ng-container>
+                    {{dpt.value + "("+dpt.count+")"}}
+            </button>
+        </app-viewmore>
+    </div>
+    <div class="office" id="officeContainer">
+        <h3>Offices</h3>
+        <p id="noEmployeeAdded" *ngIf="noFilter()">No filters are added yet.</p>
+        <app-viewmore [filterData]="filterData">
+        <button (click)="sendFilterValue(ofc.value)" *ngFor="let ofc of filterData.offices">
+            <ng-container *ngIf="noFilter()"></ng-container>
+            {{ofc.value + "("+ofc.count+")"}}</button></app-viewmore>
+    </div>
+    <div class="job-title" id="jobTitleContainer">
+        <h3>Job Titles</h3>
+        <p id="noEmployeeAdded" *ngIf="noFilter()">No filters are added yet.</p>
+        <app-viewmore [filterData]="filterData">
+        <button (click)="sendFilterValue(jobttl.value)" *ngFor="let jobttl of filterData.jobTitles">
+            <ng-container *ngIf="noFilter()"></ng-container>
+            {{jobttl.value + "("+jobttl.count+")"}}</button></app-viewmore>
+    </div>
+</div>
