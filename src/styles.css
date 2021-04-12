@@ -1,0 +1,389 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: content-text;
+    src: url('../src/assets/fonts/NunitoSans-Bold.ttf');
+  }
+  @font-face{
+    font-family: notosansfont;
+    src: url('../src/assets/fonts/NotoSans-Regular.ttf');
+  }
+  @font-face{
+    font-family: opensansfont;
+    src: url('../src/assets/fonts/OpenSans-Regular.ttf');
+  }
+  @font-face{
+    font-family: latofont;
+    src: url('../src/assets/fonts/Lato-Bold.ttf');
+  }
+  @font-face{
+    font-family: robotofont;
+    src: url('../src/assets/fonts/Roboto-Light.ttf');
+  }
+
+  body{
+    margin: 0;
+  }
+   .topnav-container{
+    border-bottom: 1px solid lightgray;
+  }
+   .topnav-container .section {
+    display: inline-block;
+    padding: 0;
+  }
+   .section a{
+    display: flex;
+  }
+  .logo{
+    width: 100%;
+  }
+   .topnav-container .section.topnav-profile {
+    font-size: 20px;
+    text-align: right;
+  }
+   .topnav-container .section.topnav-profile h2{
+    vertical-align: bottom;
+    display: inline-block;
+  }
+   .topnav-container .section.topnav-employee-directory h1{
+    font-family: robotofont;
+    color:#3ec0fd; 
+    font-size: 37px;
+    margin: 0;
+  }
+   .topnav-container .section.topnav-employee-directory h4{
+    font-family: robotofont;
+    color:rgba(0, 0, 0, 0.7); 
+    font-size: 19px;
+    margin: 0;
+  }
+   .topnav-container .section.topnav-profile h2{
+    font-family: robotofont;
+    color:#3ec0fd; 
+  }
+   .employees-container{
+    margin-top: 1%;
+  }
+   .employees-container .section {
+    display: inline-block;
+  }
+  
+   .employees-container .section.filter-section {
+   
+    vertical-align: top;
+    margin-top: 0.5%;
+  }
+  
+   .employees-container .section.employee-display-section {
+   
+    color: white;
+    background-color: white;
+  }
+   .employees-container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   .employees-container .section.employee-display-section .user-access-bar{
+    display: inline-block;
+    margin-top: 2%;
+    padding: 0;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.search-employee-section p{
+    font-family: notosansfont;
+    color: rgba(0, 0, 0, 0.616);
+    display: inline-block;
+    letter-spacing: -1px;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.search-employee-section input{
+    
+    -webkit-appearance:textfield;
+    box-sizing: content-box;
+    border: none;
+    outline: none;
+    font-size: 11px;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.search-employee-section .search-box{
+    display: inline-block;
+  background-color: white;
+  border: 1px solid #c4c1c1;
+  border-radius: 0px;
+	align-items: center;
+  padding: 4px 6px;
+  margin-left: 2%;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.search-employee-section .search-box > i {
+    color: #c4c1c1;
+    margin-right: 2px;
+  }
+   .employees-container .section.employee-display-section .search-button{
+    margin-top: 1%;
+    display: inline-block;
+  }
+   .employees-container .section.employee-display-section .search-button button.user-button{
+    background: rgb(0, 177, 252);
+    font-size: 22px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 45.1px;
+    height: 38px;
+    margin: 1.5px 1.5px;
+    outline: none;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.search-employee-section button{
+
+    display: inline-block;
+    margin-left: 8%;
+    font-size: 13px;
+    height: 35px;
+    background-color: #69ba00;
+    color: white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.filter-employee-section p{
+    font-family: notosansfont;
+    color: rgba(0, 0, 0, 0.616);
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: -1px;
+  }
+  .employees-container .section.employee-display-section .user-access-bar.add-employee-button{
+    text-align: right;
+  }
+   .employees-container .section.employee-display-section .user-access-bar.add-employee-button button{
+
+    display: inline-block;
+    background-color: #00b1fc;
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-family: latofont;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .form-popup {
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+    border: 3px solid #f1f1f1;
+    background: white;
+  }
+  
+  .form-popup .form-container {
+    max-width: 250px;
+    padding: 10px;
+    color: black;
+    font-family: robotofont;
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  
+  .form-popup .form-container input[type=text], .form-container input[type=number], .form-container input[type=email] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 0 0px 0;
+    border: none;
+    font-size: 13px;
+    background: rgb(248,248,248);
+  }
+  
+  .form-popup .form-container input[type=text]:focus, .form-container input[type=number]:focus, .form-container input[type=email]:focus {
+    outline: none;
+  }
+   .employees-container .section.employee-display-section .employee-section{
+    display: inline-block;
+    width: 102.3%;
+    background-color: white;
+    border: 1px solid lightgrey;
+    color: black;
+  }
+.employee-cards{
+    margin: 2%;
+    display: contents;
+  }
+   .employees-container .section.employee-display-section .employee-section .employee-card {
+    padding: 10px 10px;
+    /*max-width: 23.93%;*/
+    background-color: hsl(0, 2%, 91%);
+    margin: 2% 0.5%;
+    display: inline-block;
+ }
+  .employees-container .section.employee-display-section .employee-section .employee-card img.container-image {
+    display: inline-block;
+    vertical-align: top;
+    width: 59px;
+    height: 59px;
+ }
+  .employees-container .section.employee-display-section .employee-section .employee-card .container-text {
+    display: inline-block;
+    width: 65%;
+    margin-left: 2%;
+ }
+  .employees-container .section.employee-display-section .employee-section .employee-card .container-text h4{
+  font-family: notosansfont;
+  color: rgba(0, 0, 0, 0.7);
+   margin: 0;
+   font-size: 13px;
+   letter-spacing: 0px;
+ }
+  .employees-container .section.employee-display-section .employee-section .employee-card .container-text p{
+  font-family: robotofont;
+  font-size: 11px;
+   color: gray;
+   margin: 0px 0px -5px 0px;
+ }
+  .employees-container .section.employee-display-section .employee-section .employee-card .container-text .employee-job-title{
+   margin-top: 3%;
+ }
+  .employees-container .section.filter-section .office, .employees-container .section.filter-section .job-title{
+   margin-top: 20%;
+ }
+  .employees-container .section.filter-section button{
+   display: block;
+   background: white;
+   border: none;
+   font-size: 14px;
+   cursor: pointer;
+   font-family: notosansfont;
+   color: rgba(0, 0, 0, 0.6);
+   padding: 0;
+   outline: none;
+ }
+  .employees-container .section.filter-section p{
+   display: inline-block;
+   font-family: notosansfont;
+   font-size:13px;
+   color: rgba(0, 0, 0, 0.6);
+ }
+  .employees-container .section.filter-section h3{
+   margin-left: 0%;
+   font-family: content-text;
+   letter-spacing: -1px;
+   font-size: 17px;
+   font-weight: bolder;
+   color: #545353;
+ }
+  .employees-container .section.filter-section .department .department-list{
+   margin-top: -6%;
+ }
+  .employees-container .section.filter-section .office .office-list{
+  margin-top: -6%;
+}
+ .employees-container .section.filter-section .job-title .job-title-list{
+  margin-top: -6%;
+}
+.formerror{
+  color: red;
+  font-size: 11px;  
+  margin-bottom: -12px;
+}
+.form-button{
+
+  display: inline-block;
+  height:33px;
+  width: 30%;
+  background-color: #3ec0fd;
+  color: white;
+  border: none;
+  font-family: robotofont;
+  font-size: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  outline: none;
+}
+.text-right{
+  position: absolute;
+  right: 21px;
+}
+.cancel-button{
+  background-color: #3ec0fd;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 23px;
+  top: 28px;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 2px;
+}
+
+.view-more{
+    color: rgb(0, 177, 252);
+    font-weight: bolder;
+    padding: 0;
+    outline: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+.form-container h1{
+  display: inline-block;
+}
+.form-field{
+  margin:6% 0%;
+}
+.form-field.button-bottom{
+  margin-top: 45px;
+}
+.star{
+  color: red;
+}
+#selectType{
+  font-family: opensansfont;
+  font-weight: bolder;
+  font-size: 12px;
+  width: 38%;
+    border: 1px solid lightgrey;
+    border-radius: 0px;
+    padding: 8px 10px;
+    color: rgba(0, 0, 0, 0.514);
+    display: inline-block;
+    margin-left: 2%;
+    outline: none;
+}
+.fas.fa-phone-square-alt, .fas.fa-envelope, .fas.fa-comment, .fas.fa-star, .fas.fa-heart{
+  color: gray;
+  margin-right: 4%;
+  margin-top: 3%;
+  font-size: 10px;
+}
+
+.alphabet-class{
+  background:#00b1fc;
+  cursor:pointer;
+  margin:0px 0.9px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  font-family:'Open Sans', sans-serif;
+}
+.profile-name{
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: lighter;
+}
+.profile-pic{
+  margin-left: 2%;
+  height: 58px;
+  vertical-align: super;
+  margin-top: 1%;
+}
+ .employees-container .section.employee-display-section .note{
+  color: rgba(0, 0, 0, 0.7);
+  font-family: notosansfont;
+  font-size: 12px;
+  padding: 0;
+}
+ .employees-container .section.employee-display-section .note .note-section{
+  color: black;
+}
+#noEmployeeAdded{
+  margin-left: 1%;
+}
